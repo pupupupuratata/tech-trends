@@ -1,0 +1,183 @@
+/* Основные цвета и переменные */
+:root {
+  --primary: #00bcd4;
+  --dark: #121212;
+  --darker: #090909;
+  --light: #fafafa;
+  --gray: #c7c7c7;
+  --transition: all 0.3s ease;
+}
+
+/* Общие стили */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Roboto', Arial, sans-serif;
+  background-color: var(--dark);
+  color: var(--light);
+  line-height: 1.6;
+  padding-top: 120px; /* Для фиксированного хедера */
+}
+
+/* Контейнер */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Заголовки */
+h1, h2, h3 {
+  margin-bottom: 10px;
+}
+
+h1 {
+  font-size: 2.5rem;
+  color: var(--primary);
+}
+
+h2 {
+  font-size: 2rem;
+  margin-top: 40px;
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+/* Ссылки */
+a {
+  color: var(--primary);
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+a:hover {
+  opacity: 0.8;
+}
+
+/* Фиксированная шапка */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: var(--darker);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  padding: 15px 0;
+}
+
+nav ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  gap: 20px;
+}
+
+nav a {
+  color: var(--gray);
+  padding: 10px 15px;
+  border-radius: 4px;
+}
+
+nav a:hover {
+  color: var(--primary);
+  background-color: rgba(0, 188, 212, 0.1);
+}
+
+/* Основное содержимое */
+main {
+  animation: fadeIn 0.5s ease-out;
+  min-height: calc(100vh - 160px); /* Чтобы подвал был внизу */
+}
+
+/* Подвал */
+footer {
+  background-color: var(--darker);
+  color: var(--gray);
+  text-align: center;
+  padding: 20px 0;
+  margin-top: 40px;
+}
+
+/* Картинки */
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: var(--transition);
+  margin: 20px 0;
+}
+
+img:hover {
+  transform: scale(1.02);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Кнопка */
+.btn {
+  display: inline-block;
+  background-color: var(--primary);
+  color: white;
+  padding: 12px 24px;
+  border-radius: 4px;
+  margin: 20px 0;
+  transition: var(--transition);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 188, 212, 0.4);
+}
+
+/* Анимации */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Карточки (для разделов) */
+.card {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 30px;
+  transition: var(--transition);
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Адаптивность */
+@media (max-width: 560px) {
+  body {
+    padding-top: 300px;
+  }
+  
+  nav ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  h1 {
+    font-size: 2rem;
+  }
+  
+  .container {
+    width: 95%;
+  }
+}
